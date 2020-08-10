@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header'
+import OrdersList from './components/all_orders'
+import LatestOrders from './components/latest_orders'
+import PendingOrders from './components/pending_orders'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Details from './components/details'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header/>
+        <Switch>
+
+          <Route path='/' exact component={OrdersList}/>
+          <Route path='/latest' component={LatestOrders}/>
+          <Route path='/pending' component={PendingOrders}/>
+          <Route path='/details' component={Details}/>
+
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
