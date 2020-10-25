@@ -46,8 +46,8 @@ export default function SideDrawer(props) {
       onClick={toggleDrawer("right", false)}
       onKeyDown={toggleDrawer("right", false)}
     >
-      <List component="nav">
-        <Link to='/' style={{ textDecoration: 'none', color: 'black' }}><ListItem button >All Orders</ListItem></Link>
+      <List component="nav" onClick={ () => props.onClose(false) }>
+        <Link to='/all' style={{ textDecoration: 'none', color: 'black' }}><ListItem button >All Orders</ListItem></Link>
         <Divider/>
         <Link to='/latest' style={{ textDecoration: 'none', color: 'black' }}><ListItem button >Latest Orders</ListItem></Link>
         <Divider/>

@@ -6,7 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import SideDrawer from './SideDrawer'
+import SideDrawer from './SideDrawer';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,16 +31,20 @@ export default function Header() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
+
           <Typography variant="h6" className={classes.title}>
-            LochMoi Gas Deliveries
+            <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>
+              LochMoi Gas Deliveries
+              </Link>
           </Typography>
+
           <IconButton edge="start" className={classes.menuButton}
-           color="inherit" aria-label="menu"
-           onClick={()=>toggle(true)}>
+            color="inherit" aria-label="menu"
+            onClick={() => toggle(true)}>
             <MenuIcon />
           </IconButton>
 
-          <SideDrawer open={drawerOpen} onClose={(value)=>toggle(value)}/> 
+          <SideDrawer open={drawerOpen} onClose={(value) => toggle(value)} />
         </Toolbar>
       </AppBar>
     </div>
