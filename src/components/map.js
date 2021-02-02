@@ -7,8 +7,8 @@ export class MapContainer extends Component {
         return (
             
                 <Map initialCenter={{
-                    lat: -0.368230,
-                    lng: 35.285439
+                    lat: 1.0914,
+                    lng: 37.0117
                 }}
                     style={{ height: "40vh", width: "67vw" }}  //"67vw"
                     google={this.props.google} zoom={14}>
@@ -19,7 +19,7 @@ export class MapContainer extends Component {
                     <Marker
                         title={'Customer location'}
                         name={'SOMA'}
-                        position={{ lat: -0.368230, lng: 35.280000 }} />
+                        position={{ lat: 1.0914, lng: 37.0117 }} />
 
 
                 </Map>
